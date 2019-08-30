@@ -29,6 +29,32 @@ class Cult
         self.followers.size
     end
 
+    def average_age
+        # self.followers.reduce(0) {|memo, follower| memo + follower.age} / self.cult_population.to_f
+        self.followers.sum {|follower| follower.age} / self.cult_population.to_f
+    end
+
+    def my_followers_mottos
+        self.followers.each {|follower| puts "#{follower.name}'s motto: #{follower.life_motto}"}
+    end
+
+    def self.least_popular
+        # self.all.min {|a,b| a.cult_population <=> b.cult_population}
+        self.all.min_by {|cult| cult.cult_population}
+    end
+
+    def self.most_common_location
+        counts = {}
+        self.all.each do |cult|
+            if counts[cult.location]
+                counts[cult.location] += 1
+            else
+                counts[cult.location] = 1
+            end
+        end
+        counts.max_by{|key, value| value}[0]
+    end
+
     def self.all
         @@all
     end

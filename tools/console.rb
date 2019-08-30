@@ -18,8 +18,8 @@ c3 = Cult.new('cult3', 'location3', 2010, 'slogan3')
 
 
 b1 = BloodOath.new(c1, f1)
-b2 = BloodOath.new(c2, f2)
-b3 = BloodOath.new(c3, f3)
+b2 = BloodOath.new(c2, f2, Time.new(2008))
+b3 = BloodOath.new(c3, f3, Time.new(2001))
 
 binding.pry
 

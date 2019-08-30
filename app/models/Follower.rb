@@ -18,12 +18,28 @@ class Follower
         self.oaths.map {|oath| oath.cult}
     end
 
+    def cult_count
+        self.oaths.size
+    end
+
     def join_cult(cult)
         self.cults.include?(cult) ? "#{self.name} is already in cult #{cult.name}" : BloodOath.new(cult, self)
     end
 
+    def my_cults_slogans
+        self.cults.each{|cult| puts "#{cult.name}'s slogan: #{cult.slogan}'"}
+    end
+
     def self.all
         @@all
+    end
+
+    def self.most_active
+        self.all.max_by {|follower| follower.cult_count}
+    end
+
+    def self.top_ten
+        self.all.max_by(10) {|follower| follower.cult_count}
     end
 
     def self.of_a_certain_age (age)

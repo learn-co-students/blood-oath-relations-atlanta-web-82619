@@ -17,4 +17,8 @@ class BloodOath
     def initiation_date
         @initiation_date.strftime("%Y-%m-%d")
     end
+
+    def self.first_oath
+        self.all.min_by {|oath| oath.initiation_date}.follower
+    end
 end
