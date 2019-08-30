@@ -1,20 +1,27 @@
 class Cult
     attr_reader :founding_year
-    attr_accessor :name, :location, :slogan
+    attr_accessor :name, :location, :slogan, :minimum_age
 
     @@all = []
 
-    def initialize(name, location, founding_year, slogan)
+    def initialize(name, location, founding_year, slogan, minimum_age = 18)
         @name = name
         @location = location
         @founding_year = founding_year
         @slogan = slogan
+        @minimum_age = minimum_age
 
         @@all << self
     end
 
     def recruit_follower(follower)
-        self.followers.include?(follower) ? "#{follower.name} is already in cult #{self.name}" : BloodOath.new(self, follower)
+        if follower.age < self.minimum_age 
+            puts "rejected: too young"
+        elsif self.followers.include?(follower)
+            puts "#{follower.name} is already in cult #{self.name}" 
+        else
+            BloodOath.new(self, follower)
+        end
     end
 
     def oaths

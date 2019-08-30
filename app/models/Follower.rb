@@ -18,12 +18,26 @@ class Follower
         self.oaths.map {|oath| oath.cult}
     end
 
+    def fellow_cult_members
+        list = []
+        self.cults.each do |cult|
+            cult.followers.each {|follower| list << follower}
+        end
+        list.uniq.delete_if {|follower| follower == self}
+    end
+
     def cult_count
         self.oaths.size
     end
 
     def join_cult(cult)
-        self.cults.include?(cult) ? "#{self.name} is already in cult #{cult.name}" : BloodOath.new(cult, self)
+        if self.age < cult.minimum_age
+            puts "rejected: too young"
+        elsif self.cults.include?(cult)
+            puts "#{self.name} is already in cult #{cult.name}" 
+        else 
+            BloodOath.new(cult, self)
+        end
     end
 
     def my_cults_slogans

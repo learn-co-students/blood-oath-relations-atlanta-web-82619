@@ -8,7 +8,7 @@ end
 # so they will be available to test and play around with in your console
 
 f1 = Follower.new('follower1', 15, 'motto1')
-f2 = Follower.new('follower2', 12, 'motto2')
+f2 = Follower.new('follower2', 20, 'motto2')
 f3 = Follower.new('follower3', 18, 'motto3')
 
 
