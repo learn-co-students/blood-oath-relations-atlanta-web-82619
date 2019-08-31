@@ -17,6 +17,7 @@ danny = Follower.new("Danny", 28, "Nice hat.")
 andrew = Follower.new("Andrew", 26, "Seattle is pretty nice." )
 hanaa = Follower.new("Hanaa", 27, "Chips & queso, anyone?")
 princeton = Follower.new("Princeton", 25, "I can help.")
+penny = Follower.new("Penny", 7, "When do we eat?")
 
 flatiron = Cult.new("Flatiron", "Atlanta", 2012, "Learn, love, code.")
 digital_crafts = Cult.new("Digital Crafts", "Atlanta",2016, "We build the web.")
