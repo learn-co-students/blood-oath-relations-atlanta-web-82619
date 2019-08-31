@@ -1,5 +1,6 @@
 class Cult
-  attr_reader :name, :location, :founding_year, :slogan, :minimum_age
+  attr_reader :name, :location, :founding_year, :slogan
+  attr_accessor :minimum_age
 
   @@all = []
 

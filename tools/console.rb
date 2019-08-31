@@ -24,6 +24,7 @@ digital_crafts = Cult.new("Digital Crafts", "Atlanta",2016, "We build the web.")
 general_assembly = Cult.new("General Assembly", "Atlanta", 2011, "General Assembly is the solution 
   to the global skills gap.")
 ga_dc = Cult.new("General Assembly", "Washington D.C.", 2011, "Code is life.")
+kindercare = Cult.new("KinderCare", "Atlanta", 1969, "KinderCare Kids do better")
 
 andrea.join_cult(flatiron)
 dan.join_cult(flatiron)
