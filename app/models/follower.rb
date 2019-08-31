@@ -27,6 +27,11 @@ class Follower
     oath.follower = self
   end
 
+  def fellow_cult_members
+    members = cults.map {|cult| cult.followers}.flatten
+    fellow_members = members.reject {|member| member == self}.uniq
+  end
+
   def self.most_active
     @@all.max {|follower1, follower2| follower1.cults.size <=> follower2.cults.size}
   end
