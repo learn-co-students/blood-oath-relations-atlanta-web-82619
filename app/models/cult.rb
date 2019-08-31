@@ -1,5 +1,5 @@
 class Cult
-  attr_reader :name, :location, :founding_year, :slogan
+  attr_reader :name, :location, :founding_year, :slogan, :minimum_age
 
   @@all = []
 
@@ -8,6 +8,7 @@ class Cult
     @location = location
     @founding_year = founding_year
     @slogan = slogan
+    @minimum_age = 18
     # @followers = []
     @@all << self
   end
